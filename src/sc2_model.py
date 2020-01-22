@@ -118,6 +118,7 @@ def sc2_model(cnv_data, phenotype, outcome):
                                n_jobs=-1)
     grid_search.fit(x, y)
     best_param = grid_search.best_params_
+    print(best_param)
     model = LogisticRegression(penalty=best_param['penalty'],
                                solver=best_param['solver'],
                                C=best_param['C'],
